@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10152f">
+  <title>Impulso Joven | Tu primer paso hacia el empleo</title>
+  <meta name="description" content="Crea tu hoja de vida, practica entrevistas y conecta con empresas en Impulso Joven.">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #18213b;
+      background: #f7f8ff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1120px, 90%); margin: auto; }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e8eaf3;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo { font-size: 23px; font-weight: 800; color: #4537e8; }
+    .logo span { color: #18213b; }
+    .links { display: flex; align-items: center; gap: 24px; font-size: 14px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .primary { background: #4c3cf0; color: white; }
+    .secondary { background: white; color: #4537e8; border: 1px solid #d9d6ff; }
+    .hero {
+      padding: 90px 0;
+      background: linear-gradient(120deg, #eef0ff, #ffffff 65%, #e2f8ff);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .tag {
+      display: inline-block;
+      background: #e4e2ff;
+      color: #4335d5;
+      border-radius: 30px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(38px, 5vw, 60px); line-height: 1.1; letter-spacing: -2px; }
+    h1 span { color: #4c3cf0; }
+    .hero p { margin: 24px 0; color: #5b647b; font-size: 17px; max-width: 560px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .visual {
+      background: white;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px #303c7a18;
+      border: 1px solid #e8eaff;
+    }
+    .visual h3 { margin-bottom: 18px; }
+    .profile {
+      background: #f6f6ff;
+      padding: 17px;
+      margin: 12px 0;
+      border-radius: 12px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .emoji { font-size: 28px; }
+    .profile small { color: #69728a; display: block; }
+    section { padding: 75px 0; }
+    .section-title { text-align: center; margin-bottom: 38px; }
+    .section-title h2 { font-size: 34px; letter-spacing: -1px; }
+    .section-title p { color: #69728a; margin-top: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      padding: 28px;
+      background: white;
+      border: 1px solid #e9eaf4;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px #1d285008;
+    }
+    .card .emoji { display: block; margin-bottom: 14px; }
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: #687188; font-size: 15px; }
+    .steps { background: #eef0ff; }
+    .audiences { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .audience { background: white; border-radius: 20px; padding: 32px; }
+    .audience ul { padding-left: 20px; margin: 18px 0 24px; color: #59637a; }
+    .audience li { margin: 7px 0; }
+    .cta {
+      background: #171d40;
+      color: white;
+      text-align: center;
+      border-radius: 24px;
+      padding: 55px 25px;
+    }
+    .cta p { color: #d0d5ef; margin: 12px 0 24px; }
+    footer { padding: 30px 0; color: #737b90; font-size: 13px; text-align: center; }
+    .note { color: #69728a; font-size: 12px; margin-top: 14px; }
+
+    @media (max-width: 760px) {
+      .links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+      .links a:not(.btn) { display: none; }
+      nav { min-height: 68px; }
+      .hero { padding: 55px 0; }
+      .hero-grid, .cards, .audiences { grid-template-columns: 1fr; }
+      .hero-grid { gap: 32px; }
+      section { padding: 52px 0; }
+      .section-title h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">↗ Impulso <span>Joven</span></a>
+      <div class="links">
+        <a href="#servicios">Servicios</a>
+        <a href="#funciona">Cómo funciona</a>
+        <a href="#empresas">Empresas</a>
+        <a class="btn primary" href="#registro">Comenzar</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag">TU TALENTO MERECE UNA OPORTUNIDAD</span>
+          <h1>Tu primer paso hacia las <span>oportunidades.</span></h1>
+          <p>
+            Crea tu hoja de vida, prepárate para entrevistas y muestra
+            tus habilidades a empresas que buscan nuevos talentos.
+            Todo desde un mismo lugar.
+          </p>
+          <div class="actions">
+            <a href="#registro" class="btn primary">Impulsar mi perfil →</a>
+            <a href="#servicios" class="btn secondary">Conocer los servicios</a>
+          </div>
+        </div>
+
+        <div class="visual">
+          <h3>🚀 Tu futuro profesional empieza aquí</h3>
+          <div class="profile">
+            <span class="emoji">📄</span>
+            <div><strong>Hoja de vida profesional</strong><small>Organiza tu formación y habilidades</small></div>
+          </div>
+          <div class="profile">
+            <span class="emoji">🎤</span>
+            <div><strong>Practica entrevistas</strong><small>Prepárate antes de una entrevista real</small></div>
+          </div>
+          <div class="profile">
+            <span class="emoji">🤝</span>
+            <div><strong>Conecta con empresas</strong><small>Presenta tu perfil laboral</small></div>
+          </div>
+          <p class="note">Herramientas propuestas para tu desarrollo profesional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-title">
+          <h2>Todo lo que necesitas para comenzar</h2>
+          <p>Desarrolla tus habilidades y prepara tu perfil laboral.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="emoji">📄</span>
+            <h3>Crea tu hoja de vida</h3>
+            <p>Organiza tus estudios, cursos, habilidades y experiencia en un perfil profesional.</p>
+          </article>
+          <article class="card">
+            <span class="emoji">🎯</span>
+            <h3>Practica entrevistas</h3>
+            <p>Prepárate para preguntas frecuentes y aprende a comunicar tus fortalezas.</p>
+          </article>
+          <article class="card">
+            <span class="emoji">💼</span>
+            <h3>Encuentra oportunidades</h3>
+            <p>Prepara un perfil que las empresas puedan consultar con tu autorización.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps" id="funciona">
+      <div class="container">
+        <div class="section-title">
+          <h2>¿Cómo funciona?</h2>
+          <p>Cuatro pasos para preparar tu entrada al mundo laboral.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><span class="emoji">①</span><h3>Crea tu perfil</h3><p>Comparte tu formación, intereses y habilidades.</p></article>
+          <article class="card"><span class="emoji">②</span><h3>Prepárate</h3><p>Construye tu hoja de vida y practica tus respuestas.</p></article>
+          <article class="card"><span class="emoji">③</span><h3>Conecta</h3><p>Permite que las empresas consulten la información que decidas compartir.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresas">
+      <div class="container">
+        <div class="section-title">
+          <h2>Una plataforma para ambos lados</h2>
+          <p>Impulsamos el talento y facilitamos la búsqueda de candidatos.</p>
+        </div>
+        <div class="audiences">
+          <article class="audience">
+            <span class="emoji">🎓</span>
+            <h3>Para jóvenes</h3>
+            <ul>
+              <li>Prepara tu hoja de vida.</li>
+              <li>Identifica tus habilidades.</li>
+              <li>Practica entrevistas laborales.</li>
+              <li>Decide qué información compartes.</li>
+            </ul>
+            <a href="#registro" class="btn primary">Quiero impulsar mi perfil</a>
+          </article>
+          <article class="audience">
+            <span class="emoji">🏢</span>
+            <h3>Para empresas</h3>
+            <ul>
+              <li>Explora perfiles por áreas laborales.</li>
+              <li>Identifica habilidades relevantes.</li>
+              <li>Conoce candidatos interesados.</li>
+              <li>Contacta perfiles con autorización.</li>
+            </ul>
+            <a href="#registro" class="btn secondary">Me interesa como empresa</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="registro">
+      <div class="container">
+        <div class="cta">
+          <h2>Prepara tu talento. Muestra tu potencial.</h2>
+          <p>El primer paso para una oportunidad comienza contigo.</p>
+          <a class="btn primary" href="mailto:contacto@impulsojoven.co?subject=Informacion%20Impulso%20Joven">
+            Solicitar información
+          </a>
+          <p class="note">Este botón abre el correo electrónico. El registro de usuarios se implementará en una siguiente etapa.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Impulso Joven · Tu primer paso hacia el empleo.
+      <br>Prototipo inicial. Las funciones de registro y selección están pendientes de desarrollo.
+    </div>
+  </footer>
+</body>
+</html>
