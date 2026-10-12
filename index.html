@@ -876,7 +876,7 @@ body {
   </footer>
 
 <script>
-document.getElementById("perfil-form").addEventListener("submit", function (event) {
+document.getElementById("perfil-form").addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const nombre = document.getElementById("nombre").value.trim();
@@ -887,6 +887,11 @@ document.getElementById("perfil-form").addEventListener("submit", function (even
   const mensaje = document.getElementById("perfil-mensaje");
 
   vista.replaceChildren();
+
+  if (!nombre || !formacion || !habilidades) {
+    mensaje.textContent = "Completa tu nombre, formación y habilidades.";
+    return;
+  }
 
   const titulo = document.createElement("h3");
   titulo.textContent = nombre;
@@ -899,9 +904,46 @@ document.getElementById("perfil-form").addEventListener("submit", function (even
 
   vista.append(titulo, estudios, capacidades);
   vista.hidden = false;
-  mensaje.textContent = "Vista previa generada. Tus datos no se han guardado ni enviado.";
-});
 
+  mensaje.textContent = "Analizando tu perfil con inteligencia artificial...";
+
+  try {
+    const respuesta = await fetch("/api/diagnostico", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        perfil: `Nombre: ${nombre}\nFormación: ${formacion}\nHabilidades e intereses: ${habilidades}`
+      })
+    });
+
+    const datos = await respuesta.json();
+
+    if (!respuesta.ok) {
+      throw new Error(datos.error || "No se pudo analizar el perfil.");
+    }
+
+    const resultado = document.createElement("div");
+    resultado.className = "diagnostico-ia";
+
+    const encabezado = document.createElement("h3");
+    encabezado.textContent = "Diagnóstico de empleabilidad con IA";
+
+    const analisis = document.createElement("p");
+    analisis.style.whiteSpace = "pre-wrap";
+    analisis.textContent = datos.analisis;
+
+    resultado.append(encabezado, analisis);
+    vista.append(resultado);
+
+    mensaje.textContent = "Análisis completado. Revisa tus recomendaciones.";
+  } catch (error) {
+    mensaje.textContent = error instanceof Error
+      ? error.message
+      : "No fue posible conectar con la inteligencia artificial.";
+  }
+});
 document.getElementById("revisar-respuesta").addEventListener("click", function () {
   const respuesta = document.getElementById("respuesta-entrevista").value.trim();
   const mensaje = document.getElementById("entrevista-mensaje");
