@@ -132,21 +132,427 @@
       section { padding: 52px 0; }
       .section-title h2 { font-size: 28px; }
     }
-  </style>
+  
+#mi-perfil form {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+#perfil-form label,
+#entrevistas label {
+  display: block;
+  margin: 18px 0 6px;
+  font-weight: 700;
+}
+
+#perfil-form input,
+#perfil-form textarea,
+#entrevistas textarea,
+#entrevistas select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9dced;
+  border-radius: 9px;
+  background: white;
+  color: #18213b;
+  font: inherit;
+  margin-bottom: 10px;
+}
+
+#perfil-vista {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #eef0ff;
+  overflow-wrap: anywhere;
+}
+
+#perfil-mensaje,
+#entrevista-mensaje {
+  margin-top: 12px;
+  color: #4335d5;
+}
+ 
+/* Panel moderno de Impulso Joven */
+:root {
+  --ij-purple: #5945e8;
+  --ij-purple-dark: #4333c7;
+  --ij-bg: #f5f6fb;
+  --ij-card: #ffffff;
+  --ij-text: #20233a;
+  --ij-muted: #72758b;
+  --ij-border: #e8e9f2;
+}
+
+body {
+  background: var(--ij-bg);
+  color: var(--ij-text);
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 1px solid var(--ij-border);
+  padding: 28px 18px;
+}
+
+.sidebar .brand {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ij-purple);
+  margin-bottom: 36px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--ij-muted);
+  font-weight: 600;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  color: var(--ij-purple);
+  background: #f0edff;
+}
+
+.app-main {
+  min-width: 0;
+  padding: 32px;
+}
+
+.dashboard-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.dashboard-heading h1 {
+  font-size: clamp(25px, 3vw, 34px);
+  margin-bottom: 8px;
+}
+
+.dashboard-heading p {
+  color: var(--ij-muted);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: var(--ij-card);
+  border: 1px solid var(--ij-border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 5px 20px rgba(31, 35, 70, 0.035);
+}
+
+.dashboard-card h2 {
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.dashboard-card p {
+  color: var(--ij-muted);
+}
+
+.progress-track {
+  height: 9px;
+  background: #ececf5;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 18px 0 10px;
+}
+
+.progress-track span {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: var(--ij-purple);
+  border-radius: inherit;
+}
+
+.btn-primary-dashboard {
+  display: inline-block;
+  padding: 13px 19px;
+  background: var(--ij-purple);
+  color: white !important;
+  border-radius: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-primary-dashboard:hover {
+  background: var(--ij-purple-dark);
+}
+
+@media (max-width: 760px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--ij-border);
+  }
+
+  .sidebar .brand {
+    margin-bottom: 16px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar nav a {
+    padding: 9px 11px;
+    font-size: 14px;
+  }
+
+  .app-main {
+    padding: 20px 16px;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+ 
+/* Creador profesional de hojas de vida */
+.cv-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin: 32px auto;
+}
+
+.cv-form,
+.cv-preview {
+  background: #fff;
+  border: 1px solid #e8e9f2;
+  border-radius: 18px;
+  padding: 24px;
+  min-width: 0;
+}
+
+.cv-form h2,
+.cv-preview h2 {
+  margin-bottom: 18px;
+}
+
+.cv-form label {
+  display: block;
+  font-weight: 700;
+  margin: 16px 0 7px;
+}
+
+.cv-form input,
+.cv-form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9dced;
+  border-radius: 9px;
+  background: #fff;
+  color: #20233a;
+  font: inherit;
+}
+
+.cv-form textarea {
+  resize: vertical;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cv-actions button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.cv-save {
+  background: #5945e8;
+  color: #fff;
+}
+
+.cv-print {
+  background: #eeecff;
+  color: #4333c7;
+}
+
+.cv-status {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #4333c7;
+}
+
+.cv-paper {
+  color: #20233a;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper h3 {
+  font-size: 27px;
+  color: #4333c7;
+  margin-bottom: 6px;
+}
+
+.cv-paper h4 {
+  margin-top: 22px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e8e9f2;
+}
+
+.cv-paper p {
+  white-space: pre-wrap;
+  margin: 7px 0;
+}
+
+.cv-paper .cv-contact {
+  color: #72758b;
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .cv-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #cv-preview,
+  #cv-preview * {
+    visibility: visible !important;
+  }
+
+  #cv-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    padding: 12mm;
+  }
+
+  .cv-preview h2 {
+    display: none;
+  }
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+}
+
+ </style>
 </head>
 
 <body>
-  <header>
-    <nav class="container">
-      <a href="#" class="logo">↗ Impulso <span>Joven</span></a>
-      <div class="links">
-        <a href="#servicios">Servicios</a>
-        <a href="#funciona">Cómo funciona</a>
-        <a href="#empresas">Empresas</a>
-        <a class="btn primary" href="#registro">Comenzar</a>
-      </div>
+ 
+<div class="app-layout">
+  <aside class="sidebar">
+    <a href="#" class="brand">Impulso Joven</a>
+
+    <nav aria-label="Navegación principal">
+      <a href="#inicio" class="active">🏠 Inicio</a>
+      <a href="#mi-perfil">👤 Mi perfil</a>
+      <a href="#portal-jovenes">📄 Hoja de vida</a>
+      <a href="#entrevistas">🎤 Entrevistas</a>
+      <a href="#portal-empresas">🏢 Empresas</a>
     </nav>
-  </header>
+
+    <p class="note" style="margin-top: 32px;">
+      Tu talento merece una oportunidad.
+    </p>
+  </aside>
+
+  <div class="app-main">
+    <div class="dashboard-heading" id="inicio">
+      <div>
+        <h1>¡Construye tu futuro profesional!</h1>
+        <p>Organiza tu perfil y prepárate para nuevas oportunidades.</p>
+      </div>
+
+      <a class="btn-primary-dashboard" href="#mi-perfil">
+        + Crear mi hoja de vida
+      </a>
+    </div>
+
+    <div class="dashboard-grid">
+      <article class="dashboard-card">
+        <h2>Mi perfil profesional</h2>
+        <p>Completa tu formación, habilidades e intereses.</p>
+        <div class="progress-track" role="progressbar"
+          aria-label="Progreso ilustrativo del perfil"
+          aria-valuemin="0" aria-valuemax="100" aria-valuenow="35">
+          <span></span>
+        </div>
+        <p>35 % · Progreso de demostración</p>
+        <a href="#mi-perfil">Completar perfil →</a>
+      </article>
+
+      <article class="dashboard-card">
+        <h2>Mi hoja de vida</h2>
+        <p>Prepara la información necesaria para presentarte ante empresas.</p>
+        <a class="btn-primary-dashboard" href="#mi-perfil">
+          Empezar ahora
+        </a>
+      </article>
+
+      <article class="dashboard-card">
+        <h2>Entrenamiento laboral</h2>
+        <p>Practica tus respuestas para las entrevistas de trabajo.</p>
+        <a href="#entrevistas">Practicar entrevista →</a>
+      </article>
+
+      <article class="dashboard-card">
+        <h2>Oportunidades empresariales</h2>
+        <p>Explora las áreas laborales disponibles en la demostración.</p>
+        <a href="#portal-empresas">Conocer el portal →</a>
+      </article>
+    </div>
+  </div>
+</div>
 
   <main>
     <section class="hero">
@@ -269,7 +675,198 @@
         </div>
       </div>
     </section>
-  </main>
+  
+<section id="portal-jovenes" class="steps">
+  <div class="container">
+    <div class="section-title">
+      <h2>Tu espacio profesional</h2>
+      <p>Prepara tu perfil y organiza tu camino hacia el empleo.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <span class="emoji">👤</span>
+        <h3>Mi perfil laboral</h3>
+        <p>Organiza tu formación, habilidades e intereses.</p>
+        <a class="btn primary" href="#mi-perfil">Ver mi espacio</a>
+      </article>
+
+      <article class="card">
+        <span class="emoji">📄</span>
+        <h3>Mi hoja de vida</h3>
+        <p>Prepara la información de tu hoja de vida.</p>
+        <a class="btn secondary" href="#mi-perfil">Preparar mi perfil</a>
+      </article>
+
+      <article class="card">
+        <span class="emoji">🎤</span>
+        <h3>Practicar entrevistas</h3>
+        <p>Entrena tus respuestas a preguntas laborales.</p>
+        <a class="btn secondary" href="#entrevistas">Practicar</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="portal-empresas">
+  <div class="container">
+    <div class="section-title">
+      <h2>Portal para empresas</h2>
+      <p>Explora las áreas laborales de Impulso Joven.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Administración</h3>
+        <p>Perfiles interesados en procesos administrativos.</p>
+      </article>
+      <article class="card">
+        <h3>Talento humano</h3>
+        <p>Perfiles interesados en selección y gestión de personas.</p>
+      </article>
+      <article class="card">
+        <h3>Logística y tecnología</h3>
+        <p>Áreas para organizar perfiles por sus intereses.</p>
+      </article>
+    </div>
+    <p class="note">Categorías de demostración. Aún no hay candidatos reales ni búsqueda conectada.</p>
+  </div>
+</section>
+
+<section id="mi-perfil">
+  <div class="container">
+    <div class="section-title">
+      <h2>Prepara tu perfil laboral</h2>
+      <p>Completa tus datos para generar una vista previa.</p>
+    </div>
+
+    <form id="perfil-form" class="card">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" required placeholder="Escribe tu nombre">
+
+      <label for="formacion">Formación académica</label>
+      <input id="formacion" name="formacion" required placeholder="Ej. Técnico en Administración">
+
+      <label for="habilidades">Habilidades e intereses</label>
+      <textarea id="habilidades" name="habilidades" required rows="4" placeholder="Comunicación, organización..."></textarea>
+
+      <button class="btn primary" type="submit">Vista previa de mi perfil</button>
+      <p id="perfil-mensaje" role="status" aria-live="polite"></p>
+      <div id="perfil-vista" hidden></div>
+      <p class="note">Prototipo local: tus datos no se guardan ni se envían a empresas.</p>
+    </form>
+  </div>
+</section>
+
+<section id="entrevistas" class="steps">
+  <div class="container">
+    <div class="section-title">
+      <h2>Practica tu entrevista</h2>
+      <p>Prepara respuestas a preguntas frecuentes.</p>
+    </div>
+
+    <div class="card">
+      <label for="pregunta-entrevista">Pregunta de práctica</label>
+      <select id="pregunta-entrevista">
+        <option>Háblame sobre ti.</option>
+        <option>¿Cuáles son tus fortalezas?</option>
+        <option>¿Por qué te interesa este puesto?</option>
+        <option>¿Cómo afrontarías un reto en el trabajo?</option>
+      </select>
+
+      <label for="respuesta-entrevista">Tu respuesta</label>
+      <textarea id="respuesta-entrevista" rows="5" placeholder="Escribe tu respuesta..."></textarea>
+
+      <button class="btn primary" id="revisar-respuesta" type="button">Revisar mi respuesta</button>
+      <p id="entrevista-mensaje" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+  
+<section id="hoja-vida" class="container">
+  <div class="section-title">
+    <h2>Crea tu hoja de vida profesional</h2>
+    <p>Completa tus datos y prepara tu documento para postularte a empleos.</p>
+  </div>
+
+  <div class="cv-layout">
+    <form id="cv-form" class="cv-form">
+      <h2>Mis datos</h2>
+
+      <label for="cv-nombre">Nombre completo</label>
+      <input id="cv-nombre" name="nombre" required maxlength="100"
+        placeholder="Nombre y apellidos">
+
+      <label for="cv-correo">Correo electrónico</label>
+      <input id="cv-correo" name="correo" type="email" maxlength="150"
+        placeholder="tu@correo.com">
+
+      <label for="cv-telefono">Teléfono</label>
+      <input id="cv-telefono" name="telefono" type="tel" maxlength="40"
+        placeholder="Tu teléfono">
+
+      <label for="cv-ciudad">Ciudad</label>
+      <input id="cv-ciudad" name="ciudad" maxlength="100"
+        placeholder="Ciudad, país">
+
+      <label for="cv-perfil">Perfil profesional</label>
+      <textarea id="cv-perfil" name="perfil" rows="4" maxlength="1500"
+        placeholder="Describe tus fortalezas y objetivos profesionales."></textarea>
+
+      <label for="cv-educacion">Formación académica</label>
+      <textarea id="cv-educacion" name="educacion" rows="4" maxlength="2500"
+        placeholder="Estudios, institución y fechas."></textarea>
+
+      <label for="cv-experiencia">Experiencia laboral</label>
+      <textarea id="cv-experiencia" name="experiencia" rows="5" maxlength="3500"
+        placeholder="Empresa, cargo, responsabilidades y fechas. Si no tienes experiencia, puedes indicar prácticas o proyectos."></textarea>
+
+      <label for="cv-habilidades">Habilidades</label>
+      <textarea id="cv-habilidades" name="habilidades" rows="3" maxlength="1500"
+        placeholder="Comunicación, Excel, organización, etc."></textarea>
+
+      <label for="cv-cursos">Cursos y certificaciones</label>
+      <textarea id="cv-cursos" name="cursos" rows="3" maxlength="1500"
+        placeholder="Cursos realizados e instituciones."></textarea>
+
+      <div class="cv-actions">
+        <button class="cv-save" type="submit">Guardar hoja de vida</button>
+        <button class="cv-print" id="cv-imprimir" type="button">
+          Imprimir / Guardar PDF
+        </button>
+      </div>
+
+      <p id="cv-status" class="cv-status" role="status" aria-live="polite">
+        Completa tus datos para comenzar.
+      </p>
+    </form>
+
+    <div class="cv-preview" id="cv-preview">
+      <h2>Vista previa</h2>
+      <div class="cv-paper">
+        <h3 id="out-nombre">Tu nombre completo</h3>
+        <p id="out-contacto" class="cv-contact">Correo · Teléfono · Ciudad</p>
+
+        <h4>Perfil profesional</h4>
+        <p id="out-perfil">Tu perfil aparecerá aquí.</p>
+
+        <h4>Formación académica</h4>
+        <p id="out-educacion">Tu formación aparecerá aquí.</p>
+
+        <h4>Experiencia laboral</h4>
+        <p id="out-experiencia">Tu experiencia aparecerá aquí.</p>
+
+        <h4>Habilidades</h4>
+        <p id="out-habilidades">Tus habilidades aparecerán aquí.</p>
+
+        <h4>Cursos y certificaciones</h4>
+        <p id="out-cursos">Tus cursos aparecerán aquí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
   <footer>
     <div class="container">
@@ -277,5 +874,211 @@
       <br>Prototipo inicial. Las funciones de registro y selección están pendientes de desarrollo.
     </div>
   </footer>
+
+<script>
+document.getElementById("perfil-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombre").value.trim();
+  const formacion = document.getElementById("formacion").value.trim();
+  const habilidades = document.getElementById("habilidades").value.trim();
+
+  const vista = document.getElementById("perfil-vista");
+  const mensaje = document.getElementById("perfil-mensaje");
+
+  vista.replaceChildren();
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = nombre;
+
+  const estudios = document.createElement("p");
+  estudios.textContent = "Formación: " + formacion;
+
+  const capacidades = document.createElement("p");
+  capacidades.textContent = "Habilidades e intereses: " + habilidades;
+
+  vista.append(titulo, estudios, capacidades);
+  vista.hidden = false;
+  mensaje.textContent = "Vista previa generada. Tus datos no se han guardado ni enviado.";
+});
+
+document.getElementById("revisar-respuesta").addEventListener("click", function () {
+  const respuesta = document.getElementById("respuesta-entrevista").value.trim();
+  const mensaje = document.getElementById("entrevista-mensaje");
+
+  if (respuesta.length < 20) {
+    mensaje.textContent = "Escribe una respuesta un poco más desarrollada.";
+    return;
+  }
+
+  mensaje.textContent =
+    "Revisa tu respuesta: ¿contesta la pregunta, incluye un ejemplo concreto " +
+    "y explica qué aprendiste? Esta revisión todavía no utiliza inteligencia artificial.";
+});
+
+/* HOJA DE VIDA: guardado local y vista previa */
+const cvForm = document.getElementById("cv-form");
+const cvStatus = document.getElementById("cv-status");
+const cvStorageKey = "impulso-joven-cv-v1";
+
+const cvFields = [
+  "nombre",
+  "correo",
+  "telefono",
+  "ciudad",
+  "perfil",
+  "educacion",
+  "experiencia",
+  "habilidades",
+  "cursos"
+];
+
+const cvOutputIds = {
+  nombre: "out-nombre",
+  perfil: "out-perfil",
+  educacion: "out-educacion",
+  experiencia: "out-experiencia",
+  habilidades: "out-habilidades",
+  cursos: "out-cursos"
+};
+
+function cvReadForm() {
+  const data = {};
+
+  for (const field of cvFields) {
+    data[field] = cvForm.elements.namedItem(field).value;
+  }
+
+  return data;
+}
+
+function cvRender(data) {
+  for (const field of cvFields) {
+    if (typeof data[field] === "string") {
+      cvForm.elements.namedItem(field).value = data[field];
+    }
+  }
+
+  for (const field of Object.keys(cvOutputIds)) {
+    document.getElementById(cvOutputIds[field]).textContent =
+      data[field] || (
+        field === "nombre"
+          ? "Tu nombre completo"
+          : "Información pendiente de completar."
+      );
+  }
+
+  document.getElementById("out-contacto").textContent =
+    [data.correo, data.telefono, data.ciudad]
+      .filter(Boolean)
+      .join(" · ") || "Correo · Teléfono · Ciudad";
+}
+
+function cvSave(showMessage = true) {
+  try {
+    const data = cvReadForm();
+    localStorage.setItem(cvStorageKey, JSON.stringify(data));
+    cvRender(data);
+
+    if (showMessage) {
+      cvStatus.textContent =
+        "Hoja de vida guardada en este navegador.";
+    }
+  } catch {
+    cvStatus.textContent =
+      "No se pudieron guardar los datos en este navegador.";
+  }
+}
+
+/* Recuperar datos guardados */
+try {
+  const savedCV = localStorage.getItem(cvStorageKey);
+
+  if (savedCV) {
+    const data = JSON.parse(savedCV);
+
+    if (data && typeof data === "object" && !Array.isArray(data)) {
+      cvRender(data);
+      cvStatus.textContent =
+        "Recuperamos tu hoja de vida guardada.";
+    }
+  }
+} catch {
+  cvStatus.textContent =
+    "No se pudieron recuperar los datos guardados.";
+}
+
+/* Guardar mientras se escribe */
+cvForm.addEventListener("input", function () {
+  cvSave(false);
+});
+
+cvForm.addEventListener("change", function () {
+  cvSave(false);
+});
+
+/* Botón Guardar hoja de vida */
+cvForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (!cvForm.reportValidity()) {
+    return;
+  }
+
+  cvSave(true);
+});
+
+/* Imprimir o guardar como PDF */
+document.getElementById("cv-imprimir").addEventListener("click", function () {
+  cvSave(false);
+  window.print();
+});
+
+/* CONEXIÓN ENTRE PERFIL Y HOJA DE VIDA */
+const perfilForm = document.getElementById("perfil-form");
+
+if (perfilForm && cvForm) {
+  const conexionesPerfilCV = [
+    ["nombre", "cv-nombre"],
+    ["formacion", "cv-educacion"],
+    ["habilidades", "cv-habilidades"]
+  ];
+
+  // Recuperar los datos de la hoja de vida en el perfil anterior.
+  for (const [perfilId, cvId] of conexionesPerfilCV) {
+    const campoPerfil = document.getElementById(perfilId);
+    const campoCV = document.getElementById(cvId);
+
+    if (campoPerfil && campoCV && campoCV.value) {
+      campoPerfil.value = campoCV.value;
+    }
+  }
+
+  // Cuando se edita el perfil, actualizar y guardar la hoja de vida.
+  perfilForm.addEventListener("input", function (event) {
+    const campo = event.target;
+
+    for (const [perfilId, cvId] of conexionesPerfilCV) {
+      if (campo.id === perfilId) {
+        document.getElementById(cvId).value = campo.value;
+      }
+    }
+
+    cvSave(false);
+  });
+
+  // Cuando se edita la hoja de vida, actualizar el perfil anterior.
+  cvForm.addEventListener("input", function (event) {
+    const campo = event.target;
+
+    for (const [perfilId, cvId] of conexionesPerfilCV) {
+      if (campo.id === cvId) {
+        document.getElementById(perfilId).value = campo.value;
+      }
+    }
+  });
+}
+
+</script>
 </body>
 </html>
